@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+   
+    <script>
+        //create element
+        const title = document.createElement("h1");
+        const form = document.createElement("form");
+        
+
+        title.innerText = "Login";
+        form.innerHTML = ` <form>
+        <input type="email" name="mail" id="mail" placeholder="Email"> <br>
+        <input type="password" name="password" id="password" placeholder="Password"> <br>
+        <button type="submit" id="btn">ACCEDI ORA</button>
+         </form>`;
+
+
+         document.body.appendChild(title);
+        document.body.appendChild(form);
+        const mail = document.getElementById("mail");
+        const password = document.getElementById("password");
+        const button = document.getElementById("btn");
+        const body = document.querySelector("body");
+        //style
+        title.style.textAlign = "center";
+        form.style.textAlign = "center";
+        body.style.marginTop = "15%";
+        mail.style.marginBottom = "20px";
+        mail.style.width = "360px";
+        mail.style.height = "25px";
+        password.style.marginBottom = "20px";
+        password.style.width = "360px";
+        password.style.height = "25px";
+        button.style.backgroundColor = "blue";
+        button.style.color = "white";
+        button.style.width = "370px";
+        button.style.height = "35px";
+    </script>
+</body>
+</html>
