@@ -77,7 +77,6 @@
             let inputValues = input[i].value;
             person[inputId] = inputValues;
         }
-        console.log(person);
         const response = await fetch("https://api-nodejs-todolist.herokuapp.com/user/register", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json; charset=utf-8' },
@@ -87,7 +86,7 @@
         console.log(result);
 
         //location
-        document.location.href = '/login.html';
+        document.location.href = './login.html';
     };
 </script>
 </html>

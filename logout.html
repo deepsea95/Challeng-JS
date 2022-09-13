@@ -78,4 +78,7 @@
         
         sessionStorage.removeItem('token')
     }
+    email.setAttribute('value', sessionStorage.getItem('email'));
+    name.setAttribute('value', sessionStorage.getItem('name'));
+    age.setAttribute('value', sessionStorage.getItem('age'));
 </script>
