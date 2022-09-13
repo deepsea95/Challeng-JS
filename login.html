@@ -72,15 +72,18 @@
       const result = await response.json();
       console.log(result);
 
-      localStorage.setItem('token', result.token);
+     sessionStorage.setItem('token', result.token);
 
       // user data recovery
       const responseToken = await fetch('https://api-nodejs-todolist.herokuapp.com/user/me', {
         Accept: 'application/json',
-        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
+        headers: {'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
       })
       .then(resp => resp.json())
       .then(json => console.log(json))
+
+      //location
+      document.location.href = '/logout.html';
     }
   </script>
 </html>
