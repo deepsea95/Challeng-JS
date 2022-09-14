@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Register</title>
 </head>
 
@@ -19,15 +19,17 @@
 
     title.innerText = "Registrati";
     form.innerHTML = ` <form id="form">
-    <input type="email" name="email" id="email" placeholder="Email"> <br>
-    <input type="password" name="password" id="password" placeholder="Password"> <br>
+    <input type="email" name="email" id="email" placeholder="Email" required> <br>
+    <input type="password" name="password" id="password" placeholder="Password" required> <br>
     <input type="text" name="name" id="name" placeholder="Nome"> <br>
-    <input type="text" name="age" id="age" placeholder="Età"> <br>
+    <input type="number" name="age" id="age" placeholder="Età"> <br>
     <button type="submit" id="btn"><strong>Registrati ora</strong></button>
      </form>`;
 
     document.body.appendChild(title);
     document.body.appendChild(form);
+
+    //getting elements
     const body = document.querySelector("body");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
@@ -35,7 +37,7 @@
     const name = document.getElementById("name");
     const age = document.getElementById("age");
 
-    // fetch
+    //fetch function
     form.addEventListener("submit", fetchingProcess);
 
     async function fetchingProcess() {
@@ -60,5 +62,3 @@
     };
 </script>
 </html>
-
-   
