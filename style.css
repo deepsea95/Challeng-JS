@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin-top: 10%;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+form{
+    margin-top: 50px;
+}
+
+input{
+    width: 344px;
+    height: 30px;
+    margin-bottom: 35px;
+    border: 1px solid grey;
+    padding-left: 20px;
+    outline: none;
+}
+
+::placeholder{
+    color: black;
+}
+
+button{
+    width: 344px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+}
+
+#btn-red{
+    background-color: red;
+}

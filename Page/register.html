@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>Register</title>
 </head>
 
@@ -22,7 +23,7 @@
     <input type="password" name="password" id="password" placeholder="Password"> <br>
     <input type="text" name="name" id="name" placeholder="Nome"> <br>
     <input type="text" name="age" id="age" placeholder="Età"> <br>
-    <button type="submit" id="btn">Registrati ora</button>
+    <button type="submit" id="btn"><strong>Registrati ora</strong></button>
      </form>`;
 
     document.body.appendChild(title);
@@ -33,37 +34,6 @@
     const button = document.getElementById("btn");
     const name = document.getElementById("name");
     const age = document.getElementById("age");
-
-    //style
-    title.style.textAlign = "center";
-    form.style.textAlign = "center";
-    body.style.marginTop = "10%";
-    body.style.fontFamily = "Sans-Serif";
-    email.style.marginBottom = "20px";
-    email.style.width = "344px";
-    email.style.height = "25px";
-    email.style.border = "1px solid grey";
-    email.style.paddingLeft = "20px";
-    password.style.marginBottom = "20px";
-    password.style.width = "344px";
-    password.style.height = "25px";
-    password.style.border = "1px solid grey";
-    password.style.paddingLeft = "20px";
-    name.style.marginBottom = "20px";
-    name.style.width = "344px";
-    name.style.height = "25px";
-    name.style.border = "1px solid grey";
-    name.style.paddingLeft = "20px";
-    age.style.marginBottom = "20px";
-    age.style.width = "344px";
-    age.style.height = "25px";
-    age.style.border = "1px solid grey";
-    age.style.paddingLeft = "20px";
-    button.style.backgroundColor = "blue";
-    button.style.color = "white";
-    button.style.width = "366px";
-    button.style.height = "35px";
-    button.style.border = "none";
 
     // fetch
     form.addEventListener("submit", fetchingProcess);

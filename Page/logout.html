@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>Logout</title>
 </head>
 
 <body>
 </body>
-
-</html>
 
 <script>
     //create element
@@ -23,7 +22,7 @@
         <input type="text" name="email" id="email" placeholder="Email"> <br>
         <input type="text" name="name" id="name" placeholder="Nome"> <br>
         <input type="text" name="age" id="age" placeholder="Età"> <br>
-        <button type="submit" id="btn">Logout</button>
+        <button type="submit" id="btn-red"><strong>Logout</strong></button>
     </form>`;
     
     document.body.appendChild(title);
@@ -34,35 +33,7 @@
     const name = document.getElementById("name");
     const age = document.getElementById("age");
     
-    //style
-    title.style.textAlign = "center";
-    form.style.textAlign = "center";
-    body.style.marginTop = "10%";
-    body.style.fontFamily = "Sans-Serif";
-    //Email
-    email.style.marginBottom = "20px";
-    email.style.width = "344px";
-    email.style.height = "25px";
-    email.style.border = "1px solid grey";
-    email.style.paddingLeft = "20px";
-    //Name
-    name.style.marginBottom = "20px";
-    name.style.width = "344px";
-    name.style.height = "25px";
-    name.style.border = "1px solid grey";
-    name.style.paddingLeft = "20px";
-    //Age
-    age.style.marginBottom = "20px";
-    age.style.width = "344px";
-    age.style.height = "25px";
-    age.style.border = "1px solid grey";
-    age.style.paddingLeft = "20px";
-    //Button
-    button.style.backgroundColor = "red";
-    button.style.color = "white";
-    button.style.width = "366px";
-    button.style.height = "35px";
-    button.style.border = "none";
+
     
     //fetch
     form.addEventListener('submit', logout)
@@ -82,3 +53,5 @@
     name.setAttribute('value', sessionStorage.getItem('name'));
     age.setAttribute('value', sessionStorage.getItem('age'));
 </script>
+</html>
+

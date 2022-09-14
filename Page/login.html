@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css">
     <title>Login</title>
   </head>
 
@@ -19,7 +20,7 @@
     form.innerHTML = ` <form>
       <input type="email" name="email" id="email" placeholder="Email"> <br>
       <input type="password" name="password" id="password" placeholder="Password"> <br>
-      <button type="submit" id="btn">ACCEDI ORA</button>
+      <button type="submit" id="btn"><strong>ACCEDI ORA</strong></button>
        </form>`;
 
     document.body.appendChild(title);
@@ -29,24 +30,6 @@
     const password = document.getElementById("password");
     const button = document.getElementById("btn");
     const body = document.querySelector("body");
-    //style
-    title.style.textAlign = "center";
-    form.style.textAlign = "center";
-    body.style.marginTop = "15%";
-    // Email
-    email.style.marginBottom = "20px";
-    email.style.width = "360px";
-    email.style.height = "25px";
-    // Password 
-    password.style.marginBottom = "20px";
-    password.style.width = "360px";
-    password.style.height = "25px";
-    // Button 
-    button.style.backgroundColor = "blue";
-    button.style.color = "white";
-    button.style.width = "370px";
-    button.style.height = "35px";
-    button.style.border = "none";
 
     //fetch
     form.addEventListener("submit", fetchingProcess);
