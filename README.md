@@ -1,1 +1,1 @@
-# Challeng-JS
+# Challeng JS - User Management

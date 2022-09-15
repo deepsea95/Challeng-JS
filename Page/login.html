@@ -17,7 +17,7 @@
     const form = document.createElement("form");
 
     title.innerText = "Login";
-    form.innerHTML = ` <form>
+    form.innerHTML = ` <form id="form">
       <input type="email" name="email" id="email" placeholder="Email" required> <br>
       <input type="password" name="password" id="password" placeholder="Password" required> <br>
       <button type="submit" id="btn"><strong>ACCEDI ORA</strong></button>
@@ -55,10 +55,10 @@
       const result = await response.json();
       console.log(result);
 
-     sessionStorage.setItem('token', result.token);
-     sessionStorage.setItem('email', result.user.email);
-     sessionStorage.setItem('age', result.user.age);
-     sessionStorage.setItem('name', result.user.name);
+      sessionStorage.setItem('token', result.token);
+      sessionStorage.setItem('email', result.user.email);
+      sessionStorage.setItem('age', result.user.age);
+      sessionStorage.setItem('name', result.user.name);
 
       // user data recovery
       const responseToken = await fetch('https://api-nodejs-todolist.herokuapp.com/user/me', {
