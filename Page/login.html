@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css">
+    <title>Login</title>
+  </head>
+
+  <body>
+  </body>
+
+  <script>
+    //create element
+    const title = document.createElement("h1");
+    const form = document.createElement("form");
+
+    title.innerText = "Login";
+    form.innerHTML = ` <form id="form">
+      <input type="email" name="email" id="email" placeholder="Email" required> <br>
+      <input type="password" name="password" id="password" placeholder="Password" required> <br>
+      <button type="submit" id="btn"><strong>ACCEDI ORA</strong></button>
+       </form>`;
+
+    document.body.appendChild(title);
+    document.body.appendChild(form);
+    
+    //getting elements
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const button = document.getElementById("btn");
+    const body = document.querySelector("body");
+
+    //fetch function
+    form.addEventListener("submit", fetchingProcess);
+
+    async function fetchingProcess() {
+      event.preventDefault();
+      let input = document.querySelectorAll("input");
+      let users = {};
+      for (i = 0; i < input.length; i++) {
+        let inputId = input[i].id;
+        let inputValues = input[i].value;
+        users[inputId] = inputValues;
+      }
+      const response = await fetch(
+        "https://api-nodejs-todolist.herokuapp.com/user/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json; charset=utf-8" },
+          body: JSON.stringify(users),
+        }
+      );
+      const result = await response.json();
+      console.log(result);
+
+      sessionStorage.setItem('token', result.token);
+      sessionStorage.setItem('email', result.user.email);
+      sessionStorage.setItem('age', result.user.age);
+      sessionStorage.setItem('name', result.user.name);
+
+      // user data recovery
+      const responseToken = await fetch('https://api-nodejs-todolist.herokuapp.com/user/me', {
+        Accept: 'application/json',
+        headers: {'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
+      })
+      .then(resp => resp.json())
+      .then(json => console.log(json))
+
+      //location
+      document.location.href = './logout.html';
+    }
+  </script>
+</html>
